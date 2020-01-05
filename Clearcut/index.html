@@ -1,24 +1,246 @@
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <div id="container">
+            <div class="content">
+                <header>
+                    <img src="images/logo.png" id="logo"/>
+                    <div id="top-nav">
+                            <ul>
+                              <li class="active"><a href="" title="">Home</a></li>
+                              <li><a href="">Styledemo</a></li>
+                              <li><a href="">Fullwidth</a></li>
+                              <li><a href="">Dropdown</a></li>
+                              <li><a href="">Portfolio</a></li>
+                              <li><a href="">Gallery</a></li>
+                            </ul>
+                    </div>
+                </header>
+                <div class="shot-text">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non diam<br/>erat. In fringilla massa ut nisi
+                          ullamcorper pellentesque"</p>
+                </div>
+                <div class="wrap">
+                            <div id="arrow-left" class="arrow"></div>
+                            <div id="slider">
+                              <div class="slide slide1">
+                                <div class="slide-content">
+                                  <div class="overlay">
+                                    <h2>This Is A Very Long Slider Title</h2>
+                                    <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed. Facilispede
+                                      estibulum nulla orna nisl velit.</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="slide slide2">
+                                <div class="slide-content">
+                                  <div class="overlay">
+                                    <h2>This Is A Very Long Slider Title</h2>
+                                    <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed. Facilispede
+                                      estibulum nulla orna nisl velit.</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="slide slide3">
+                                <div class="slide-content">
+                                  <div class="overlay">
+                                    <h2>This Is A Very Long Slider Title</h2>
+                                    <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed. Facilispede
+                                      estibulum nulla orna nisl velit.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="arrow-right" class="arrow2"></div>
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
+                            <script>
+                                let sliderImages = document.querySelectorAll(".slide"),
+                                    arrowLeft = document.querySelector("#arrow-left"),
+                                    arrowRight = document.querySelector("#arrow-right"),
+                                    current = 0;
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+                                function reset() {
+                                    for (let i = 0; i < sliderImages.length; i++) {
+                                        sliderImages[i].style.display = "none";
+                                    }
+                                }
 
-  <meta name="theme-color" content="#fafafa">
-</head>
+                                function startSlide() {
+                                    reset();
+                                    sliderImages[0].style.display = "block";
+                                }
 
-<body>
-  <p>Hello world!</p>
-</body>
+                                function slideLeft() {
+                                    reset();
+                                    sliderImages[current - 1].style.display = "block";
+                                    current--;
+                                }
 
+                                function slideRight() {
+                                    reset();
+                                    sliderImages[current + 1].style.display = "block";
+                                    current++;
+                                }
+
+                                arrowLeft.addEventListener("click", function() {
+                                    if (current === 0) {
+                                        current = sliderImages.length;
+                                    }
+                                    slideLeft();
+                                });
+
+                                arrowRight.addEventListener("click", function() {
+                                    if (current === sliderImages.length - 1) {
+                                        current = -1;
+                                    }
+                                    slideRight();
+                                });
+
+                                startSlide();
+
+                            </script>
+                          </div>
+                          <div class="end-slide"><img src="images/dot.png" alt=""/></div>
+                          <hr>
+                <div id="data">
+                    <div class="data1">
+                            <h2>A little about us</h2>
+                            <img src="images/dataimg.jpg" alt="">
+                            <div class="text1data1">
+                            <p>Justoid nonummy laoreet phasellent penatoque in antesque pellus elis eget tincidunt. Nequatdui laorem justo a non tellus laoreet tincidunt ut vel velit nonummy laoreet phasellent penatoque in antesque pellus elis eget tincidunt.</p>
+                        </div>
+                        <div class="text2data1">
+                            <p>Idenim semper pellente velis felit ac. Justoid nonummy laoreet phasellent penatoque in antesque pellus elis eget tincidunt.</p>
+                        </div>
+                        <div>
+                            <a href="">Read More About Us >></a>
+                        </div>
+                        </div>
+                    <div class="data2">
+                            <h2>Some of our services</h2>
+                            <div class=" item item1">
+                                <img src="images/item.jpg" alt="">
+                                <h4>Service Title</h4>
+                                <p>Inteligula congue id elis donec sce sag ittis intes id laoreet aenean</p>
+                            </div>
+                            <div class=" item item2">
+                                    <img src="images/item.jpg" alt="">
+                                    <h4>Service Title</h4>
+                                    <p>Inteligula congue id elis donec sce sag ittis intes id laoreet aenean</p>
+                                </div>
+                                <div class=" item item3">
+                                        <img src="images/item.jpg" alt="">
+                                        <h4>Service Title</h4>
+                                        <p>Inteligula congue id elis donec sce sag ittis intes id laoreet aenean</p>
+                                    </div>
+                                    <div class=" item item4">
+                                            <img src="images/item.jpg" alt="">
+                                            <h4>Service Title</h4>
+                                            <p>Inteligula congue id elis donec sce sag ittis intes id laoreet aenean</p>
+                                        </div>
+                                        <div>
+                                                <a href="">View All Of Our Services >> </a>
+                                            </div>
+                    </div>
+                    <div class="data3">
+                            <h2>What our clients say</h2>
+                            <div class=" quote quote1">
+                                <img src="images/quotes.png" alt="">
+                                <h4>Tommy Tanker - CEO</h4>
+                                <p>Justoid nonummy laoreet phasellent penatoque in antesque pellus elis eget tincidunt. Nequatdui laorem justo a non tellus laoreet tincidunt ut vel velit. Idenim semper pellente velis felit ac nullam pretium morbi lacus.</p>
+                                <a href="">View This Project >> </a>
+                            </div>
+                            <div class=" quote quote2">
+                                    <img src="images/quotes.png" alt="">
+                                    <h4>Tommy Tanker - CEO</h4>
+                                <p>Justoid nonummy laoreet phasellent penatoque in antesque pellus elis eget tincidunt. Nequatdui laorem justo a non tellus laoreet tincidunt ut vel velit. Idenim semper pellente velis felit ac nullam pretium morbi lacus.</p>
+                                <a href="">View This Project >> </a>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <footer>
+                    <div class="one">
+                    <h3>Company Details</h3>
+                        <hr>
+                        <p>Company Name</p>
+                        <p>Street name & number</p>
+                        <p>Town</p>
+                        <p>Postcode/Zip</p>
+                        <br>
+                        <p>Tel:xxxx xxxxxxxx</p>
+                        <p>Fax:xxxx xxxxxxxx</p>
+                        <p>Email:contact@mydomain.com</p>
+                        <h4>Oficce Hourse</h4>
+                        <p>Monday - Friday: 8:00 - 17:30</p>
+                        <p>Saturday: 08:00 - 13:00</p>
+                    </div>
+
+                    <div class="two">
+                        <h3>Stay Social</h3>
+                        <hr>
+                        <div>
+                            <img src="images/linkedin.png" >
+                            <a class="link" target="_blank" href="https://www.linkedin.com/">Get linked up in LinkedIn</a>
+                        </div>
+                        <hr>
+                        <div>
+                            <img src="images/twitter.png" >
+                            <a class="link" target="_blank" href="https://www.tweeter.com/">Keep up with our Tweets</a>
+                        </div>
+                        <hr>
+                        <div>
+                            <img src="images/pinterest.png" >
+                            <a class="link" target="_blank" href="https://www.pinterest.com/">Photos in Pinterest</a>
+                        </div>
+                        <hr>
+                        <div>
+                            <img src="images/rss.png" >
+                            <a class="link" target="_blank" href="https://www.facebook.com/">Get in Facebook</a>
+                        </div>
+                    </div>
+
+                    <div class="three">
+                        <h3>From the Blog</h3>
+                        <div>
+                            <p>Blog Post Tittle</p>
+                            <p>Posted by Admin on 00.0000.00</p>
+                            <br>
+                            <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed facilispede estibulum</p>
+                            <a href="#">Read more >></a>
+                        </div>
+                        <br>
+                        <div>
+                            <p>Blog Post Tittle</p>
+                            <p>Posted by Admin on 00.0000.00</p>
+                            <br>
+                            <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed facilispede estibulum</p>
+                            <a href="#">Read more >></a>
+                        </div>
+                    </div>
+                    <div class="four">
+                        <h3>Contact Us</h3>
+                        <input name="name" placeholder="Name">
+                        <input name="email" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                        <textarea placeholder="Message" style="height: 100px" ></textarea>
+                        <button>Submit</button>
+                    </div>
+                    <div class="copyrights">
+                        <div class="left">
+                            <p>Copyright @ 2013 Domain Name - All Rights Reserved</p>
+                        </div>
+                        <div class="right">
+                            <p>Template by OS Templates</p>
+                        </div>
+                    </div>
+                </footer>
+
+    </body>
 </html>
