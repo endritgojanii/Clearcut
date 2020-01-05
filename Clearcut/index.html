@@ -32,29 +32,91 @@
     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non diam<br/>erat. In fringilla massa ut nisi
       ullamcorper pellentesque"</p>
   </div>
-</div>
-<div id="banner-wrapper">
-  <div class="container">
-    <div class="row">
-      <div id="banner">
-        <div id="banner-container">
-          <div class="col-lg-6">
-            <a href=""><img src="img/left.png" id="left-arrow" alt=""></a>
+  <div class="wrap">
+    <div id="arrow-left" class="arrow"></div>
+    <div id="slider">
+      <div class="slide slide1">
+        <div class="slide-content">
+          <div class="overlay">
+            <h2>This Is A Very Long Slider Title</h2>
+            <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed. Facilispede
+              estibulum nulla orna nisl velit.</p>
           </div>
-          <div class="col-lg-6">
-            <a href=""><img src="img/right.png" id="right-arrow" alt=""></a>
-            <div class="overlay">
-              <h2>This Is A Very Long Slider Title</h2>
-              <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed. Facilispede
-                estibulum nulla orna nisl velit.</p>
-            </div>
+        </div>
+      </div>
+      <div class="slide slide2">
+        <div class="slide-content">
+          <div class="overlay">
+            <h2>This Is A Very Long Slider Title</h2>
+            <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed. Facilispede
+              estibulum nulla orna nisl velit.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide slide3">
+        <div class="slide-content">
+          <div class="overlay">
+            <h2>This Is A Very Long Slider Title</h2>
+            <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed. Facilispede
+              estibulum nulla orna nisl velit.</p>
           </div>
         </div>
       </div>
     </div>
+    <div id="arrow-right" class="arrow2"></div>
+
+    <script>
+        let sliderImages = document.querySelectorAll(".slide"),
+            arrowLeft = document.querySelector("#arrow-left"),
+            arrowRight = document.querySelector("#arrow-right"),
+            current = 0;
+
+        function reset() {
+            for (let i = 0; i < sliderImages.length; i++) {
+                sliderImages[i].style.display = "none";
+            }
+        }
+
+        function startSlide() {
+            reset();
+            sliderImages[0].style.display = "block";
+        }
+
+        function slideLeft() {
+            reset();
+            sliderImages[current - 1].style.display = "block";
+            current--;
+        }
+
+        function slideRight() {
+            reset();
+            sliderImages[current + 1].style.display = "block";
+            current++;
+        }
+
+        arrowLeft.addEventListener("click", function() {
+            if (current === 0) {
+                current = sliderImages.length;
+            }
+            slideLeft();
+        });
+
+        arrowRight.addEventListener("click", function() {
+            if (current === sliderImages.length - 1) {
+                current = -1;
+            }
+            slideRight();
+        });
+
+        startSlide();
+
+    </script>
   </div>
   <div class="end-slide"><img src="img/dot.png" alt=""/></div>
+  <hr>
+
 </div>
+
 <footer>
   <div class="container">
     <div class="row">
@@ -133,9 +195,13 @@
       <div class="col-lg-3" id="col-4">
         <h4>Contact Us</h4>
         <form>
-          <input class="form-control" type="text" placeholder="Name">
-          <input class="form-control" type="text" placeholder="Email">
-          <input class="form-control" type="text" placeholder="Message" id="message">
+          <label>
+            <input class="form-control" type="text" placeholder="Name">
+          </label>
+          <label>
+            <input class="form-control" type="text" placeholder="Email">
+          </label>
+          <label for="message"></label><input class="form-control" type="text" placeholder="Message" id="message">
         </form>
         <form action="https://mail.google.com" target="_blank">
           <button type="submit" class="btn btn-submit">Submit</button>
