@@ -61,6 +61,7 @@ ul{
 #banner-container img #right-arrow{
 	margin-right: 5px;
 }
+
 .overlay h2{
 	display: block;
 	font-size: 22px;
@@ -115,7 +116,7 @@ footer .footer-last{
 	margin-top: 30px;
 }
 footer h4{
-	font-family: Georgia;
+  font-family: Georgia, serif;
 	font-size: 16px;
 	color: #ffffff;
 	height: 30px;
@@ -171,3 +172,4 @@ footer #col-4 input{
 .fl_right{
 	float: right;
 }
+
